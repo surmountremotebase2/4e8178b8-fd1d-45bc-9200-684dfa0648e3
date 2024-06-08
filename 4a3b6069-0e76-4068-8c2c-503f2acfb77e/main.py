@@ -43,7 +43,7 @@ class TradingStrategy(Strategy):
         # Check if the price decreased by more than 0.5% from the last price when bought.
         elif self.last_price and (self.last_price / current_price - 1) > 0.005:
             log("AAPL price decreased by more than 0.5%, selling.")
-            allocation["AAPL"] = 0  # Sell all AAPL shares. 
+            allocation["AAPL"] =0  # Sell all AAPL shares. 
 
         self.last_price = current_price
 
