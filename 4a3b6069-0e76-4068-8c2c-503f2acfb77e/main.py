@@ -46,6 +46,6 @@ class TradingStrategy(Strategy):
             allocation["AAPL"] = 0  # Sell all AAPL shares. 
 
         self.last_price = current_price
-        
+
         # Ensure we always return an allocation, or an empty dict if no action is taken.
         return TargetAllocation(allocation)
