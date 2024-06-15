@@ -36,10 +36,10 @@ class TradingStrategy(Strategy):
             pct_changes = [(close_prices[i] - close_prices[i-1]) / close_prices[i-1] for i in range(1, 3)]
 
             # Determine strategy action based on percent changes
-            if pct_changes[0] > 0.005 and pct_changes[1] > 0.005:
+            if pct_changes[0] > 0.001 and pct_changes[1] > 0.001:
                 # If the stock was up more than 0.5% two days in a row, buy/hold $10000 worth of AAPL
                 allocation_dict[self.ticker] = 1  # Using 1 as a proxy, should adjust based on actual account management strategy
-            elif pct_changes[0] < -0.005 and pct_changes[1] < -0.005:
+            elif pct_changes[0] < -0.001 and pct_changes[1] < -0.001:
                 # If the stock was down more than 0.5% two days in a row, sell all holdings of AAPL
                 allocation_dict[self.ticker] = 0  # This means selling all AAPL
             else:
